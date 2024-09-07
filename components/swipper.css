@@ -28,6 +28,26 @@
     object-fit: cover;
   }
   
+  .swiper-button-prev {
+      background-color: #D45353;
+      padding: 5px;
+      width: 70px ;
+      height: 70px;
+      border-radius: 100px;
+      color:dimgrey;
+  }
+
+
+  .swiper-button-next {
+    background-color: #D45353;
+    padding: 5px;
+    width: 70px ;
+    height: 70px;
+    border-radius: 100px;
+    color:dimgrey;
+}
+
+
   .autoplay-progress {
     position: absolute;
     right: 16px;
