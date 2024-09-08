@@ -9,14 +9,37 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './swipperHotdeals.css';
-
+import { GroupAction, TitleWithUnderlines } from './Widgets';
+import { FaLink } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { IoIosShareAlt } from "react-icons/io";
 
 
 
 const RealtorCard = () => {
   return (
     <div className='w-full h-[500px] rounded-lg shrink- even:bg-black'>
-            agents
+          <div className="flex flex-row h-full bg-transparent">
+                <div className='w-3/4 flex flex-col place-content-end  border-4 border-black'>
+                    <div className='border-4 h-28 w-full items-center flex flex-col place-content-center'>
+                            <div><h3 className='font-extrabold text-lg'>Darrell Steward</h3></div>
+                            <div>
+                                <TitleWithUnderlines
+                                title='October 30, 2017'
+                                titleclassname='text-sm font-extrabold'
+                                lineclassname='border-b-2 w-10 border-yellow-200'
+                            /></div>
+                    </div>
+                </div>
+                <div className='w-1/4 h-full border-4 flex place-content-center items-center'>
+                    <GroupAction content={[
+                          {size:32, Icon:IoIosShareAlt },
+                          {size:32, Icon:FaLocationDot },
+                          {size:32, Icon:FaLink },
+                          
+                    ]}  />
+                </div>
+            </div>
     </div>
 )
 }

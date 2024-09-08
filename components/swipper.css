@@ -34,17 +34,16 @@
       width: 70px ;
       height: 70px;
       border-radius: 100px;
-      color:dimgrey;
+      color:white;
   }
 
 
   .swiper-button-next {
     background-color: #D45353;
-    padding: 5px;
     width: 70px ;
     height: 70px;
     border-radius: 100px;
-    color:dimgrey;
+    color:white;
 }
 
 
