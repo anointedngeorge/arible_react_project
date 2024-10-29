@@ -1,10 +1,10 @@
 import React from 'react'
-import { Title, TitleWithUnderlines } from './Widgets'
+import { grediantcolor2, Title, TitleWithUnderlines } from './Widgets'
 import { FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosShareAlt } from "react-icons/io";
 import Link from 'next/link';
-
+import Image from 'next/image';
 
 
 const GroupAction = (prop:{
@@ -37,21 +37,26 @@ return (
 
 const Listing = () => {
     return (
-        <div className='col-span-1 w-full h-96   rounded-lg shrink-0 border-4 border-black'>
-            <div className="flex flex-row h-full bg-transparent">
-                <div className='w-3/4 flex flex-col place-content-end  border-4 border-black'>
-                    <div className='border-4 h-28 w-full items-center flex flex-col place-content-center'>
-                            <div><h3 className='font-extrabold text-2xl'>First Property Listing</h3></div>
-                            <div>
-                                <TitleWithUnderlines
-                                title='N23,000,000'
-                                titleclassname='font-extrabold'
-                                lineclassname='border-b-2 w-10 border-yellow-200'
-                            /></div>
+        <div className='col-span-1 w-full h-96  rounded-lg shrink-0 relative'>
+            <Image className='image-full brightness-75 backdrop-brightness-75 -z-20'  src={`https://cdn.pixabay.com/photo/2020/06/25/10/21/architecture-5339245_960_720.jpg`} alt="" fill={true} />
+
+            <div className='w-full h-full rounded-lg'>
+                <div className="flex flex-row h-full ">
+                    <div className='w-3/4 flex flex-col place-content-end'>
+                        <div className={`h-28 w-full items-center flex flex-col place-content-center`}>
+                                <div><h3 className='font-extrabold text-2xl text-white text-pretty'>First Property Listing</h3></div>
+                                <div>
+                                    <TitleWithUnderlines
+                                    title='N23,000,000'
+                                    titleclassname='font-extrabold'
+                                    lineclassname='border-b-2 w-10 border-mainred'
+                                    flexclassname='text-white'
+                                /></div>
+                        </div>
                     </div>
-                </div>
-                <div className='w-1/4 h-full border-4 flex place-content-center items-center'>
-                    <GroupAction size={35} />
+                    <div className='w-1/4 h-full text-white flex place-content-center items-center bg-slate-900'>
+                        <GroupAction size={35} iconcolor='#dc143c' />
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,15 +83,14 @@ return (
 
 const PropertyListing = () => {
   return (
-    <div className='flex flex-col p-20 space-y-3 max-sm:p-4'>
-
+    <div className='flex flex-col p-20 space-y-3 max-sm:p-4 bg-neutral-100'>
             <Title 
                 title='Property Listing Section'
                 subtitle='List of properties'
                 titleclassname='text-2xl uppercase font-bold'
                 subtitleclassname='uppercase font-bold'
          />
-        <div>
+        <div className='z-30'>
             <div className="flex flex-col space-y-5">
                 <div className='flex place-content-center'>
                     <div className="w-9/12 overflow-auto">

@@ -23,14 +23,14 @@ const Contactuslistng1 = () => {
                 <Card Icon={FaLocationDot} size={30} 
                             text='4517 Washington Ave. Manchester, Kentucky 39495'
                             color='#dc143c'
-                            classname='font-extrabold text-3xl'
+                            classname='font-extrabold text-3xl text-slate-900'
                  />
                 <Card 
                     Icon={FaPhoneAlt} 
                     size={30} 
                     text='(302)-555-0107, (234)-345-232-32' 
                     color='#dc143c'
-                    classname='font-extrabold text-3xl'
+                    classname='font-extrabold text-3xl text-slate-900'
                 />
             </div>
         </div>
@@ -42,7 +42,7 @@ const Contactuslistng2 = () => {
     return (
         <div className='col-span-1 p-3' >
             <div className='mt-3 mb-3'>
-                <h3 className='font-bold text-2xl'>Leave us a message</h3>
+                <h3 className='font-bold text-2xl text-slate-900'>Leave us a message</h3>
             </div>
             <div className='w-full h-96  shrink-0 '>
                 <form action="#" >

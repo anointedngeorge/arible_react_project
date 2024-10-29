@@ -11,11 +11,12 @@ import './swipperHotdeals.css';
 
 
 
-import { grediantcolor, TitleWithUnderlines } from './Widgets';
+import { grediantcolor, grediantcolor2, TitleWithUnderlines } from './Widgets';
 import { FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosShareAlt } from "react-icons/io";
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 
@@ -49,28 +50,34 @@ const GroupAction = (prop:{
 
 const Deals = () => {
     return (
-        <div className='shrink-0 w-full grid grid-rows-3 grid-cols-1 border-4 border-neutral-100  place-content-center h-96 rounded-lg max-sm:w-full'>
-            <div className='shrink-0 flex place-content-end'>
-                <div className='h-10 px-5 py-1 text-sm text-center rounded-bl-3xl text-black drop-shadow-lg bg-yellow-500'>Available</div>
-            </div>
-            <div className='shrink-0 flex place-content-center'>
-                <GroupAction 
-                  size={30}
-                  iconcolor='#000'
-                 />
-            </div>
-            <div className={`flex place-content-center text-white w-full h-32 p-3 bg-transparent ${grediantcolor}`}>
-              {/*  */}
-                <div className="flex flex-col place-content-center">
-                  <div><h3 className='font-sans font-extrabold text-2xl'>New Layout street</h3></div>
-                  <div className='text-center '>
-                      <TitleWithUnderlines  
-                          title='N23,000,00'
-                          flexclassname='place-content-center'
-                          titleclassname='font-bold'
-                          lineclassname={`border-b-2 border-yellow-400 w-20`}
-                      />
-                  </div>
+        <div 
+        className='relative shrink-0 w-full  border-4 border-neutral-100  place-content-center h-96 rounded-lg max-sm:w-full'
+        
+        >
+            <Image className='image-full brightness-90'  src={`https://cdn.pixabay.com/photo/2020/06/25/10/21/architecture-5339245_960_720.jpg`} alt="" fill={true} />
+            <div className='grid grid-rows-3 grid-cols-1 '>
+                <div className='shrink-0 flex place-content-end'>
+                    <div className='h-10 font-bold  px-5 py-1 text-sm text-center rounded-bl-3xl text-white drop-shadow-lg bg-mainred'>Available</div>
+                </div>
+                <div className='shrink-0 flex place-content-center'>
+                    <GroupAction 
+                      size={30}
+                      iconcolor='#000'
+                    />
+                </div>
+                <div className={`flex z-50 place-content-center text-white w-full h-32 p-3 ${grediantcolor2}`}>
+                  {/*  */}
+                    <div className="flex flex-col place-content-center">
+                      <div><h3 className='font-sans font-extrabold text-2xl'>New Layout street</h3></div>
+                      <div className='text-center '>
+                          <TitleWithUnderlines  
+                              title='N23,000,00'
+                              flexclassname='place-content-center'
+                              titleclassname='font-bold'
+                              lineclassname={`border-b-2 border-mainred w-20`}
+                          />
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>

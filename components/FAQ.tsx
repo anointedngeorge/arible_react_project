@@ -3,7 +3,7 @@ import { Title } from './Widgets'
 
 const FAQ = () => {
   return (
-    <div className='p-20'>
+    <div className='p-20 text-slate-900'>
 
         <Title 
                 title='FAQ'

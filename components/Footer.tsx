@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { GoDotFill } from "react-icons/go";
 import { IconType } from 'react-icons';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6';
+import Image from 'next/image';
 
 
 const SocialIcons = (prop:{
@@ -36,11 +37,17 @@ return (
 const Footer1 = () => {
     return (
         <div className='col-span-1 p-3 space-y-6 flex flex-col w-full shrink-0'>
-            <div className='text-2xl font-sans text-center font-bold'>Company's Profile</div>
-            <div className='text-center'>
-                logo
+            <div className='text-2xl font-sans text-center font-bold text-mainred'>Company's Profile</div>
+            <div className='text-center flex place-content-center'>
+                <Image 
+                    src={`/./logo/logo.jpeg`} 
+                    alt='...' 
+                    width={200} 
+                    height={70}
+                    className='rounded-md'
+                />
             </div>
-            <div className='text-center leading-6'>
+            <div className='text-center text-neutral-400 leading-6'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dicta, sint adipisci molestias cumque at, ea pariatur alias ratione vel expedita quae nisi, voluptatem assumenda eligendi vitae repudiandae mollitia fugiat?
             </div>
         </div>
@@ -51,7 +58,7 @@ const Footer1 = () => {
 const Footer2 = () => {
     return (
         <div className='col-span-1 pl-8 pt-3 flex flex-col place-items-center w-full shrink-0'>
-                <div className='text-2xl font-sans font-bold'>Links</div>
+                <div className='text-2xl font-sans font-bold text-mainred'>Links</div>
                 <div className='mt-8 flex flex-col pl-4 '>
                     <MenuLinks Icon={GoDotFill} title='Home' flexclassname='flex-row items-center space-x-1'  />
                     <MenuLinks Icon={GoDotFill} title='About us' flexclassname='flex-row items-center space-x-1'  />
@@ -79,6 +86,7 @@ const Footer3 = () => {
 
 
 const Footer = () => {
+    const currentdate = new Date().getFullYear()
   return (
     <div className='bg-slate-800'>
         <div className={`flex flex-col px-20 text-white  space-y-3 max-sm:p-4 `} >
@@ -94,7 +102,9 @@ const Footer = () => {
             
         </div>
         <div className='shadow-lg mt-3 flex place-content-center text-white'>
-            small footer
+            <p className='text-mainred'>
+               @arible estate and property {currentdate}
+            </p>
         </div>
     </div>
   )

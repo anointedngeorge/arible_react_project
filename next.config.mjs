@@ -5,6 +5,10 @@ const nextConfig = {
           {
             hostname: 'media.istockphoto.com',
           },
+
+          {
+            hostname: 'cdn.pixabay.com',
+          }
         ],
       },
 };

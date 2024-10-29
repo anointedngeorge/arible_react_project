@@ -13,29 +13,35 @@ import { GroupAction, TitleWithUnderlines } from './Widgets';
 import { FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosShareAlt } from "react-icons/io";
+import Image from 'next/image';
 
 
 
 const RealtorCard = () => {
   return (
-    <div className='w-full h-[500px] rounded-lg shrink- even:bg-black'>
-          <div className="flex flex-row h-full bg-transparent">
-                <div className='w-3/4 flex flex-col place-content-end  border-4 border-black'>
-                    <div className='border-4 h-28 w-full items-center flex flex-col place-content-center'>
+    <div className='relative w-full h-[500px] rounded-lg shrink- even:bg-black'>
+          
+          <div className="flex flex-row h-full bg-transparent ">
+                <div className='w-3/4 flex flex-col place-content-end relative'>
+                <Image className='object-top brightness-90 '  
+                    src={`https://cdn.pixabay.com/photo/2016/07/18/10/55/asian-1525673_640.jpg`} 
+                    alt="" fill={true} />
+
+                    <div className='z-50 bg-slate-900 bg-opacity-60 text-white  h-28 w-full items-center flex flex-col place-content-center'>
                             <div><h3 className='font-extrabold text-lg'>Darrell Steward</h3></div>
                             <div>
                                 <TitleWithUnderlines
                                 title='October 30, 2017'
                                 titleclassname='text-sm font-extrabold'
-                                lineclassname='border-b-2 w-10 border-yellow-200'
+                                lineclassname='border-b-2 w-10 border-mainred'
                             /></div>
                     </div>
                 </div>
-                <div className='w-1/4 h-full border-4 flex place-content-center items-center'>
+                <div className='w-1/4 h-full bg-slate-900 flex place-content-center items-center'>
                     <GroupAction content={[
-                          {size:32, Icon:IoIosShareAlt },
-                          {size:32, Icon:FaLocationDot },
-                          {size:32, Icon:FaLink },
+                          {size:32, Icon:IoIosShareAlt, iconcolor:"#dc143c" },
+                          {size:32, Icon:FaLocationDot, iconcolor:"#dc143c" },
+                          {size:32, Icon:FaLink, iconcolor:"#dc143c"},
                           
                     ]}  />
                 </div>

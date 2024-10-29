@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'gredientcolor':"bg-gradient-to-br from-red-900 to-indigo-900"
+        mainred: "#dc143c"
       },
     },
   },
