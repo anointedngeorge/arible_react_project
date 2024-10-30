@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConnectWithUs, grediantFootercolor, MenuLinks } from './Widgets'
+import { ConnectWithUs, MenuLinks } from './Widgets'
 import Link from 'next/link'
 import { GoDotFill } from "react-icons/go";
 import { IconType } from 'react-icons';
@@ -37,7 +37,7 @@ return (
 const Footer1 = () => {
     return (
         <div className='col-span-1 p-3 space-y-6 flex flex-col w-full shrink-0'>
-            <div className='text-2xl font-sans text-center font-bold text-mainred'>Company's Profile</div>
+            <div className='text-2xl font-sans text-center font-bold text-mainred'>Companys Profile</div>
             <div className='text-center flex place-content-center'>
                 <Image 
                     src={`/./logo/logo.jpeg`} 

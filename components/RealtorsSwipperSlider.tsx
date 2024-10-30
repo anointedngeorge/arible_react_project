@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -55,11 +55,9 @@ const RealtorCard = () => {
 
 
 export const RealtorsSwipperSlider = () => {
-  const [swiperRef, setSwiperRef] = useState<any>(null);
-  const appendNumber:any = useRef(500);
-  const prependNumber:any = useRef(1);
+  const swiperRef = useCallback(() => {}, [])
   // Create array with 500 slides
-  const [slides, setSlides] = useState<any>(
+  const [slides] = useState (
     Array.from({ length: 500 }).map((_, index) => <RealtorCard key={`${index}`} />)
   );
 
@@ -85,29 +83,12 @@ export const RealtorsSwipperSlider = () => {
     }, []);
 
 
-  const prepend = () => {
-    setSlides([
-      `Slide ${prependNumber.current - 2}`,
-      `Slide ${prependNumber.current - 1}`,
-      ...slides,
-    ]);
-    prependNumber.current = prependNumber.current - 2;
-    swiperRef?.slideTo(swiperRef?.activeIndex + 2, 0);
-  };
-
-  const append = () => {
-    setSlides([...slides, 'Slide ' + ++appendNumber.current]);
-  };
-
-  const slideTo = (index: number) => {
-    swiperRef.slideTo(index - 1, 0);
-  };
 
   return (
     <>
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
-        onSwiper={setSwiperRef}
+        onSwiper={swiperRef}
         slidesPerView={innerHeightRef}
         centeredSlides={true}
         spaceBetween={30}
@@ -117,8 +98,8 @@ export const RealtorsSwipperSlider = () => {
         navigation={true}
         virtual
       >
-        {slides?.map((slideContent:any, index: number | undefined) => (
-          <SwiperSlide className='rounded-lg ' key={slideContent} virtualIndex={index}>
+        {slides?.map((slideContent:ReactElement, index: number | undefined) => (
+          <SwiperSlide className='rounded-lg ' key={index} virtualIndex={index}>
               {slideContent}
           </SwiperSlide>
         ))}

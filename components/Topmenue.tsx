@@ -1,7 +1,6 @@
 
 "use client"
-import React,{useCallback, useEffect, useState} from 'react'
-import { CiMenuBurger } from "react-icons/ci";
+import React,{ useEffect, useState} from 'react'
 import { TiThMenu } from "react-icons/ti";
 import { grediantcolor } from './Widgets';
 import { FaPhoneAlt } from "react-icons/fa";
@@ -47,7 +46,7 @@ const Topmenue = () => {
 
     useEffect( () => {
         globalThis.addEventListener('scroll', () => {
-            let ht =  globalThis.scrollY;
+            const ht =  globalThis.scrollY;
             setScrollY(ht)
             const maker = 700;
             const classname = `fixed flipOutY w-full drop-shadow-2xl shadow-red-600 z-50`;

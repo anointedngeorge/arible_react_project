@@ -1,17 +1,7 @@
 import React from 'react'
 import { RealtorsSwipperSlider } from './RealtorsSwipperSlider'
 import { Title } from './Widgets'
-import Image from 'next/image'
 
-
-
-const Listing = () => {
-    return (
-        <div className='col-span-1 w-full h-96  rounded-lg shrink-0 border-4 border-black even:bg-black'>
-            dhh
-        </div>
-    )
-}
 
 
 

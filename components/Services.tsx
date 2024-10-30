@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { grediantcolor, TitleWithUnderlines } from './Widgets'
+import {  TitleWithUnderlines } from './Widgets'
 
 
 const ServiceGrid = () => {

@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,12 +11,13 @@ import './swipperHotdeals.css';
 
 
 
-import { grediantcolor, grediantcolor2, TitleWithUnderlines } from './Widgets';
+import {  grediantcolor2, TitleWithUnderlines } from './Widgets';
 import { FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosShareAlt } from "react-icons/io";
 import Link from 'next/link';
 import Image from 'next/image';
+
 
 
 
@@ -88,12 +89,11 @@ const Deals = () => {
 
 
 export const HotdealsSwipper = () => {
-  const [swiperRef, setSwiperRef] = useState<any>(null);
-  
-  const appendNumber:any = useRef(500);
-  const prependNumber:any = useRef(1);
+  const swiperRef = useCallback(() => {}, [])
+  // const appendNumber:any = useRef(500);
+  // const prependNumber:any = useRefw(1);
   // Create array with 500 slides
-  const [slides, setSlides] = useState<any>(
+  const [slides] = useState(
     Array.from({ length: 500 }).map((_, index) => <Deals key={`${index}`} />)
   );
 
@@ -119,29 +119,18 @@ export const HotdealsSwipper = () => {
 
 
 
-  const prepend = () => {
-    setSlides([
-      `Slide ${prependNumber.current - 2}`,
-      `Slide ${prependNumber.current - 1}`,
-      ...slides,
-    ]);
-    prependNumber.current = prependNumber.current - 2;
-    swiperRef?.slideTo(swiperRef?.activeIndex + 2, 0);
-  };
 
-  const append = () => {
-    setSlides([...slides, 'Slide ' + ++appendNumber.current]);
-  };
+  // const append = () => {
+  //   setSlides([...slides, 'Slide ' + ++appendNumber.current]);
+  // };
 
-  const slideTo = (index: number) => {
-    swiperRef.slideTo(index - 1, 0);
-  };
+ 
 
   return (
     <>
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
-        onSwiper={setSwiperRef}
+        onSwiper={swiperRef}
         slidesPerView={innerHeightRef}
         centeredSlides={true}
         spaceBetween={30}
@@ -152,8 +141,8 @@ export const HotdealsSwipper = () => {
         virtual
       >
 
-        {slides.map((slideContent:any, index: number | undefined) => (
-          <SwiperSlide className='' key={slideContent} virtualIndex={index}>
+        {slides.map((slideContent:ReactElement, index: number | undefined) => (
+          <SwiperSlide key={index} virtualIndex={index}>
             {slideContent}
           </SwiperSlide>
         ))}
