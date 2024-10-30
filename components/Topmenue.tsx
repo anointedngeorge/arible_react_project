@@ -62,7 +62,7 @@ const Topmenue = () => {
  
   return (
     <div className={`${scrollCssY}`}>
-        <div className={`${grediantcolor} flex flex-row place-content-evenly items-center p-3 max-sm:flex-col max-sm:place-content-center`}>
+        <div className={`${grediantcolor} flex flex-row place-content-between  items-center px-12 py-3 max-sm:flex-col max-sm:place-content-center`}>
             <div>
                 <div className="flex flex-row space-x-3 items-center">
                 

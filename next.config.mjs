@@ -8,7 +8,10 @@ const nextConfig = {
 
           {
             hostname: 'cdn.pixabay.com',
-          }
+          },
+           {
+            hostname: 'arible-one.vercel.app',
+          },
         ],
       },
 };
