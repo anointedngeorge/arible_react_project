@@ -30,7 +30,7 @@ export default function Home() {
         <FAQ />
         <JoinRealtorsButton 
           mainclassname="p-20"
-          btnclassname={`px-32 py-8 rounded-btn text-white font-bold text-2xl ${grediantcolor}`}
+          btnclassname={`px-32 max-sm:px-10 max-sm:py-3 py-8 max-sm:text-lg rounded-btn text-white font-bold text-2xl ${grediantcolor}`}
           title="Join Our Realtors's Forum"
         />
         

@@ -24,7 +24,7 @@ const SwipperSlide: React.FC<SlideInterface> = ({ title }) => {
       <div className="z-40 flex place-content-center w-full h-full absolute">
         <div className="flex flex-col place-content-center items-center text-white space-y-3">
           <div>
-            <h2 className={`${grediantexttcolor2} text-center drop-shadow-2xl max-sm:text-6xl`}>
+            <h2 className={`${grediantexttcolor2} text-center drop-shadow-2xl max-sm:text-5xl`}>
               Welcome to Arible Estate <br /> And Properties
             </h2>
           </div>
