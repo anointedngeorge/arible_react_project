@@ -26,7 +26,7 @@ const ServiceGrid = () => {
 
 const Services = () => {
   return (
-    <div className='p-32 max-sm:p-10 '>
+    <div className='p-32 max-sm:p-8  max-sm:text-white'>
         <div className='flex flex-col space-y-20'>
             <div className='flex place-content-center'>
                     <TitleWithUnderlines 

@@ -82,7 +82,7 @@ interface GroupActionInterface {
 
 export const GroupAction = (prop:{content?:GroupActionInterface[]}) => {
 return (
-  <div className='flex flex-col  place-content-center items-center space-y-8'>
+  <div className='flex flex-col  max-sm:text-white place-content-center items-center space-y-8'>
     {prop.content?.map((item, index) => (
         <div key={`actionid${index}`}>
         <Link title={`${item?.linktitle}`} href={`${item?.linkiconhref}`} >
@@ -108,7 +108,7 @@ interface MenuLinksInterface {
 export const MenuLinks = (prop:MenuLinksInterface) => {
     return (
         <div>
-            <Link className="text-neutral-400" title={`${prop.hovertitle}`} href={`${prop.link}`} > 
+            <Link className="text-neutral-400 max-sm:text-white" title={`${prop.hovertitle}`} href={`${prop.link}`} > 
                 <div className={`flex ${prop.flexclassname}`}>
                     <div>
                         {prop.Icon? (<prop.Icon />) : ''}
