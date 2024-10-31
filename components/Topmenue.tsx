@@ -1,6 +1,6 @@
 
 "use client"
-import React,{ useEffect, useState} from 'react'
+import React from 'react'
 // import { TiThMenu } from "react-icons/ti";
 import { grediantcolor } from './Widgets';
 import { FaPhoneAlt } from "react-icons/fa";
