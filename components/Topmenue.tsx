@@ -1,7 +1,7 @@
 
 "use client"
 import React,{ useEffect, useState} from 'react'
-import { TiThMenu } from "react-icons/ti";
+// import { TiThMenu } from "react-icons/ti";
 import { grediantcolor } from './Widgets';
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -41,23 +41,6 @@ const Bar = (prop:{
 
 
 const Topmenue = () => {
-    const [scrollY, setScrollY] = useState<number>(0)
-    const [scrollCssY, setScrollCssY] = useState<string>("")
-
-    useEffect( () => {
-        globalThis.addEventListener('scroll', () => {
-            const ht =  globalThis.scrollY;
-            setScrollY(ht)
-            const maker = 700;
-            const classname = `fixed flipOutY w-full drop-shadow-2xl shadow-red-600 z-50`;
-
-            if (scrollY > maker) {
-                setScrollCssY(classname);
-            } else {
-                setScrollCssY("");
-            }
-    });
-    }, [scrollY] )
 
  
   return (
