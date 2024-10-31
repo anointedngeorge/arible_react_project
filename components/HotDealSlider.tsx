@@ -52,7 +52,7 @@ const GroupAction = (prop:{
 const Deals = () => {
     return (
         <div 
-        className='relative shrink-0 w-full  border-4 border-neutral-100  place-content-center h-96 rounded-lg max-sm:w-full'
+        className='relative shrink-0 w-full place-content-center h-96 rounded-lg max-sm:w-full'
         
         >
             <Image className='image-full brightness-90'  src={`https://cdn.pixabay.com/photo/2020/06/25/10/21/architecture-5339245_960_720.jpg`} alt="" fill={true} />

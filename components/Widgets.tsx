@@ -2,7 +2,7 @@ import Link from "next/link"
 import { IconType } from "react-icons/"
 
 
-export const grediantcolor = "bg-gradient-to-t from-slate-900 via-slate-900 to-slate-900"
+export const grediantcolor = "bg-gradient-to-t from-slate-900 via-slate-900 to-slate-600"
 export const grediantcolor2 = "bg-gradient-to-t from-slate-900 via-slate-900 to-slate-900"
 export const grediantexttcolor = "text-6xl font-bold font-sans bg-gradient-to-br from-mainred to-indigo-900 bg-clip-text text-transparent"
 export const grediantexttcolor2 = "text-7xl font-extrabold font-sans bg-gradient-to-t from-mainred via-mainred to-white bg-clip-text text-transparent"

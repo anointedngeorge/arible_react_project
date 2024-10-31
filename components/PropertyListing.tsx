@@ -87,7 +87,7 @@ const PropertyListing = () => {
             <Title 
                 title='Property Listing Section'
                 subtitle='List of properties'
-                titleclassname='text-2xl uppercase font-bold'
+                titleclassname='text-2xl max-sm:text-lg uppercase font-bold'
                 subtitleclassname='uppercase font-bold'
          />
         <div className='z-30'>

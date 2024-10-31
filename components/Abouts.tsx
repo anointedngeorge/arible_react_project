@@ -12,7 +12,7 @@ const Abouts = () => {
                     <TitleWithUnderlines 
                         title='About Arible Estate &amp; Property'
                         lineclassname={`border-b-4 border-b-red-800 w-32`}
-                        titleclassname='text-2xl text-slate-900 font-bold text-center uppercase'
+                        titleclassname='text-2xl max-sm:text-lg text-slate-900 font-bold text-center uppercase'
                     />
             </div>
             <div className='col-span-5'>
@@ -28,7 +28,7 @@ const Abouts = () => {
         </div>
 
         <div className='flex flex-col'>
-            <div className='text-3xl font-extrabold text-slate-900'>Total Completed Projects</div>
+            <div className='text-3xl max-sm:text-lg font-extrabold text-slate-900'>Total Completed Projects</div>
             <div className='text-center  hero-content'>
                 <CountUp className='text-9xl text-mainred drop-shadow-2xl' end={100} />
             </div>

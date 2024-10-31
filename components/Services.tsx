@@ -32,7 +32,7 @@ const Services = () => {
                     <TitleWithUnderlines 
                         title='Arible Services'
                         lineclassname={`border-b-4 border-b-red-800 w-32`}
-                        titleclassname='text-2xl text-slate-900 text-center font-bold uppercase'
+                        titleclassname='text-2xl max-sm:text-lg text-slate-900 text-center font-bold uppercase'
                     />
             </div>
 

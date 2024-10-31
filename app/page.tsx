@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import HotDeals from "@/components/HotDeals";
 import JoinRealtorsButton from "@/components/JoinRealtorsButton";
 import CustomLayout from "@/components/Layout";
+import Menu from "@/components/Menu";
 import PropertyListing from "@/components/PropertyListing";
 import Realtors from "@/components/Realtors";
 import Services from "@/components/Services";
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <CustomLayout >
+        <Menu />
         <Slider />
         <HotDeals />
         <Abouts />

@@ -8,7 +8,7 @@ const FAQ = () => {
         <Title 
                 title='FAQ'
                 subtitle='Find Answers'
-                titleclassname='text-2xl uppercase font-bold'
+                titleclassname='text-2xl max-sm:text-lg uppercase font-bold'
                 subtitleclassname='uppercase font-bold'
          />
 

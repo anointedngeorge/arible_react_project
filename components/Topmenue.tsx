@@ -61,7 +61,7 @@ const Topmenue = () => {
 
  
   return (
-    <div className={`${scrollCssY}`}>
+    <div className={`max-sm:hidden`}>
         <div className={`${grediantcolor} flex flex-row place-content-between  items-center px-12 py-3 max-sm:flex-col max-sm:place-content-center`}>
             <div>
                 <div className="flex flex-row space-x-3 items-center">
@@ -83,7 +83,7 @@ const Topmenue = () => {
                     </div>
                 </div>
             </div>
-            <TiThMenu size={30} color='#fff' />
+            
         </div>
         
     </div>
