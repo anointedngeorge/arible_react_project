@@ -1,1 +1,0 @@
-bg-gradient-to-bl from-indigo-900 to-black

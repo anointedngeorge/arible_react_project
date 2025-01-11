@@ -1,113 +1,62 @@
-import React from 'react'
-import { ConnectWithUs, MenuLinks } from './Widgets'
 import Link from 'next/link'
-import { GoDotFill } from "react-icons/go";
-import { IconType } from 'react-icons';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa6';
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import Image from 'next/image';
 
-
-const SocialIcons = (prop:{
-    Icon?:IconType, 
-    title?:string, 
-    iconsize?:number,
-    link?:string
-}) => {
-return (
-<div>
-    <Link href={prop.link? prop.link : ''}>
-    <div className="flex flex-row space-x-1 text-white font-sans items-center">
-    <div>
-        {
-        prop.Icon? (
-            <prop.Icon size={prop.iconsize} />
-        ) : ''}
-    </div>
-    {prop.title? (
-        <div>{`${prop.title}`}</div>
-    ) : '' }
-</div>
-    </Link>
-</div>
-)
-}
-
-
-
-const Footer1 = () => {
-    return (
-        <div className='col-span-1 p-3 space-y-6 flex flex-col w-full shrink-0'>
-            <div className='text-2xl font-sans text-center font-bold text-mainred'>Companys Profile</div>
-            <div className='text-center flex place-content-center'>
-                <Image 
-                    src={`/./logo/logo.jpeg`} 
-                    alt='...' 
-                    width={200} 
-                    height={70}
-                    className='rounded-md'
-                />
-            </div>
-            <div className='text-center text-neutral-400 leading-6'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dicta, sint adipisci molestias cumque at, ea pariatur alias ratione vel expedita quae nisi, voluptatem assumenda eligendi vitae repudiandae mollitia fugiat?
-            </div>
-        </div>
-    )
-}
-
-
-const Footer2 = () => {
-    return (
-        <div className='col-span-1 pl-8 pt-3 flex flex-col place-items-center w-full shrink-0'>
-                <div className='text-2xl font-sans font-bold text-mainred'>Links</div>
-                <div className='mt-8 flex flex-col pl-4 '>
-                    <MenuLinks Icon={GoDotFill} title='Home' flexclassname='flex-row items-center space-x-1'  />
-                    <MenuLinks Icon={GoDotFill} title='About us' flexclassname='flex-row items-center space-x-1'  />
-                    <MenuLinks Icon={GoDotFill} title='Contact' flexclassname='flex-row items-center space-x-1'  />
-                    <MenuLinks Icon={GoDotFill} title='FAQ' flexclassname='flex-row items-center space-x-1'  />
-                </div>
-              
-        </div>
-    )
-}
-
-
-const Footer3 = () => {
-    return (
-        <div className='col-span-1 flex flex-col space-y-5 pr-3 w-full shrink-0'>
-            <div><ConnectWithUs /></div>
-            <div className='flex flex-row place-content-end space-x-2'>
-                <div><SocialIcons Icon={FaFacebook}  iconsize={40} /> </div>
-                <div><SocialIcons Icon={FaTwitter} iconsize={40} /> </div>
-                <div><SocialIcons Icon={FaInstagram} iconsize={40} /> </div>
-            </div>
-        </div>
-    )
-}
-
-
-const Footer = () => {
-    const currentdate = new Date().getFullYear()
+export default function Footer() {
   return (
-    <div className='bg-slate-800'>
-        <div className={`flex flex-col px-20 text-white  space-y-3 max-sm:p-4 `} >
-            <div className='mt-10'>
-                <div className="flex flex-col space-y-5">
-                    <div className='grid grid-cols-3 max-sm:grid-cols-1 '>
-                        <Footer1 />
-                        <Footer2 />
-                        <Footer3 />
-                    </div>
-                </div>
+    <footer className="bg-[#000066] text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-SRaZ0WlgzEC8hNsl7BqQapW3ayLtmo.jpeg"
+              alt="Arible Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto mb-4"
+            />
+            <p className="mb-4">Your trusted partner in real estate, providing exceptional properties and services.</p>
+            <div className="flex space-x-4">
+              <Link href="#" className="hover:text-[#FF0000]"><Facebook /></Link>
+              <Link href="#" className="hover:text-[#FF0000]"><Twitter /></Link>
+              <Link href="#" className="hover:text-[#FF0000]"><Instagram /></Link>
+              <Link href="#" className="hover:text-[#FF0000]"><Linkedin /></Link>
             </div>
-            
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><Link href="/" className="hover:text-[#FF0000]">Home</Link></li>
+              <li><Link href="/properties" className="hover:text-[#FF0000]">Properties</Link></li>
+              <li><Link href="/agents" className="hover:text-[#FF0000]">Agents</Link></li>
+              <li><Link href="/about" className="hover:text-[#FF0000]">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-[#FF0000]">Contact</Link></li>
+              <li><Link href="/get-in-touch" className="hover:text-[#FF0000]">Get in Touch</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <p>123 Real Estate Street</p>
+            <p>Cityville, State 12345</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@luxuryestates.com</p>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
+            <p className="mb-4">Subscribe to our newsletter for the latest property updates.</p>
+            <form className="flex">
+              <Input type="email" placeholder="Your email" className="rounded-r-none" />
+              <Button type="submit" className="rounded-l-none bg-[#FF0000] hover:bg-[#FF0000]/90">Subscribe</Button>
+            </form>
+          </div>
         </div>
-        <div className='shadow-lg mt-3 flex place-content-center text-white'>
-            <p className='text-mainred'>
-               @arible estate and property {currentdate}
-            </p>
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+          <p>&copy; {new Date().getFullYear()} LuxuryEstates. All rights reserved.</p>
         </div>
-    </div>
+      </div>
+    </footer>
   )
 }
 
-export default Footer
