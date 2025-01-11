@@ -1,7 +1,26 @@
+import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactForm from '@/components/ContactForm'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Get in Touch | Arible Real Estate',
+  description: 'Contact Arible Real Estate for all your luxury property needs. Our expert team is ready to assist you.',
+  keywords: ['contact Arible', 'real estate inquiry', 'property consultation', 'get in touch'],
+  openGraph: {
+    title: 'Get in Touch | Arible Real Estate',
+    description: 'Contact Arible Real Estate for all your luxury property needs. Our expert team is ready to assist you.',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-SRaZ0WlgzEC8hNsl7BqQapW3ayLtmo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Arible Real Estate',
+      },
+    ],
+  },
+}
 
 export default function GetInTouchPage() {
   return (
