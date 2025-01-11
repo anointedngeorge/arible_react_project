@@ -3,14 +3,22 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Menu, X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image';
+import Image from 'next/image'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  const menuItems = [
+    { href: '/', label: 'Home' },
+    { href: '/properties', label: 'Properties' },
+    { href: '/agents', label: 'Agents' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
+  ]
 
   return (
     <header className="bg-white shadow-sm">
@@ -24,42 +32,43 @@ export default function Header() {
             className="h-10 w-auto"
           />
         </Link>
-        <div className="md:hidden">
-          <Button variant="ghost" size="icon" onClick={toggleMenu}>
-            {isMenuOpen ? <X /> : <Menu />}
-          </Button>
-        </div>
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.nav
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 bg-white shadow-md md:hidden"
-            >
-              <div className="flex flex-col p-4 space-y-2">
-                <Link href="/" className="text-gray-600 hover:text-[#000066]">Home</Link>
-                <Link href="/properties" className="text-gray-600 hover:text-[#000066]">Properties</Link>
-                <Link href="/agents" className="text-gray-600 hover:text-[#000066]">Agents</Link>
-                <Link href="/about" className="text-gray-600 hover:text-[#000066]">About</Link>
-                <Link href="/contact" className="text-gray-600 hover:text-[#000066]">Contact</Link>
-                <Link href="/get-in-touch" className="w-full">
-                  <Button className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">Get in Touch</Button>
-                </Link>
-              </div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
         <nav className="hidden md:flex space-x-4">
-          <Link href="/" className="text-gray-600 hover:text-[#000066]">Home</Link>
-          <Link href="/properties" className="text-gray-600 hover:text-[#000066]">Properties</Link>
-          <Link href="/agents" className="text-gray-600 hover:text-[#000066]">Agents</Link>
-          <Link href="/about" className="text-gray-600 hover:text-[#000066]">About</Link>
-          <Link href="/contact" className="text-gray-600 hover:text-[#000066]">Contact</Link>
+          {menuItems.map((item) => (
+            <Link key={item.href} href={item.href} className="text-gray-600 hover:text-[#000066]">
+              {item.label}
+            </Link>
+          ))}
         </nav>
-        <Link href="/get-in-touch">
-          <Button className="hidden md:inline-flex bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">Get in Touch</Button>
-        </Link>
+        <div className="hidden md:block">
+          <Link href="/get-in-touch">
+            <Button className="bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">Get in Touch</Button>
+          </Link>
+        </div>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <nav className="flex flex-col space-y-4 mt-6">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-lg font-medium text-gray-600 hover:text-[#000066]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link href="/get-in-touch" onClick={() => setIsMenuOpen(false)}>
+                <Button className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">Get in Touch</Button>
+              </Link>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   )
