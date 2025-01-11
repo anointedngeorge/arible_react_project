@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
@@ -17,6 +19,8 @@ export default function Header() {
     { href: '/about', label: 'About' },
     { href: '/agents', label: 'Agents' },
     { href: '/properties', label: 'Properties' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/events', label: 'Events' },
     { href: '/contact', label: 'Contact' },
   ]
 
@@ -34,7 +38,7 @@ export default function Header() {
         </Link>
         <nav className="hidden md:flex space-x-4">
           {menuItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-gray-600 hover:text-[#000066]">
+            <Link key={item.href} href={item.href} className={`text-gray-600 hover:text-[#000066] ${pathname === item.href ? 'border-b-2 border-[#FF0000]' : ''}`}>
               {item.label}
             </Link>
           ))}
@@ -57,7 +61,9 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-lg font-medium text-gray-600 hover:text-[#000066]"
+                  className={`text-lg font-medium text-gray-600 hover:text-[#000066] ${
+                    pathname === item.href ? 'border-b-2 border-[#FF0000]' : ''
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

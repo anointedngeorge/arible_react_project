@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
+import PropertiesContent from '@/components/PropertiesContent'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import PropertiesContent from '@/components/PropertiesContent'
 
 export const metadata: Metadata = {
   title: 'Properties | Arible Real Estate',

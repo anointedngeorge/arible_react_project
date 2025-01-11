@@ -6,6 +6,8 @@ import RealtorsSlider from '@/components/RealtorsSlider'
 import Testimonials from '@/components/Testimonials'
 import OurServices from '@/components/OurServices'
 import Footer from '@/components/Footer'
+import UpcomingEvents from '@/components/UpcomingEvents'
+import BlogPreview from '@/components/BlogPreview'
 
 export const metadata: Metadata = {
   title: 'Arible Real Estate | Luxury Homes and Properties',
@@ -33,7 +35,8 @@ export default function Home() {
         <HeroSlider />
         <AvailableProperties />
         <RealtorsSlider />
-        <Testimonials />
+        <UpcomingEvents />
+        <BlogPreview />
         <OurServices />
       </main>
       <Footer />
